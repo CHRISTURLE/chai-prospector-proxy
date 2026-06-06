@@ -3,7 +3,7 @@
 
 export default async function handler(req, res) {
   // CORS — autoriser uniquement ton domaine en prod (remplace par ton URL Vercel)
-  res.setHeader("Access-Control-Allow-Origin", "*");
+ res.setHeader("Access-Control-Allow-Origin", "https://claude.ai");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
