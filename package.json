@@ -1,0 +1,9 @@
+{
+  "name": "chai-prospector-api",
+  "version": "1.0.0",
+  "description": "Proxy Google Places API pour PAMPAM Chai Prospector",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
