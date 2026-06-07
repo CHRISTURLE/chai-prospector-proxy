@@ -12,172 +12,95 @@
     ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
 
     .header {
-      border-bottom: 1px solid #161616;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      border-bottom: 1px solid #161616; padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; position: sticky; top: 0;
+      background: #0a0a0a; z-index: 50;
     }
     .logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
     .tagline { font-size: 10px; color: #444; letter-spacing: 0.15em; margin-top: 2px; }
     .header-btns { display: flex; gap: 8px; flex-wrap: wrap; }
 
-    .btn {
-      border: none; border-radius: 6px; padding: 8px 16px;
-      font-weight: 800; font-size: 11px; cursor: pointer;
-      font-family: inherit; letter-spacing: 0.1em;
-      text-transform: uppercase; transition: all 0.15s;
-    }
+    .btn { border: none; border-radius: 6px; padding: 8px 16px; font-weight: 800; font-size: 11px; cursor: pointer; font-family: inherit; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.15s; }
     .btn-primary { background: #F5A623; color: #000; }
-    .btn-secondary { background: #111; color: #555; }
-    .btn-active { background: #F5A623; color: #000; }
+    .btn-ghost { background: #111; color: #555; }
     .btn-demo { background: #1a1a1a; color: #9B59B6; border: 1px solid #9B59B633; }
-    .btn-csv { background: #1a1a1a; color: #27AE60; border: 1px solid #27AE6033; }
+    .btn-csv { background: #1a1a1a; color: #27AE60; border: 1px solid #27AE6033; display:none; }
     .btn:active { transform: scale(0.97); }
 
     .main { padding: 20px 24px; max-width: 1000px; margin: 0 auto; }
-
-    .card {
-      background: #111;
-      border: 1px solid #161616;
-      border-radius: 12px;
-      padding: 18px;
-      margin-bottom: 18px;
-    }
-    .card-label {
-      font-size: 10px; color: #555;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+    .card { background: #111; border: 1px solid #161616; border-radius: 12px; padding: 18px; margin-bottom: 18px; }
+    .card-label { font-size: 10px; color: #555; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
 
     .search-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
-    input, select, textarea {
-      background: #0a0a0a; border: 1px solid #222; border-radius: 8px;
-      padding: 9px 14px; color: #fff; font-size: 13px; font-family: inherit;
-      outline: none;
-    }
-    select { cursor: pointer; }
+    input, select, textarea { background: #0a0a0a; border: 1px solid #222; border-radius: 8px; padding: 9px 14px; color: #fff; font-size: 13px; font-family: inherit; outline: none; }
     input::placeholder { color: #444; }
 
-    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-    .filter-btn {
-      background: #1a1a1a; color: #555; border: none;
-      border-radius: 4px; padding: 3px 10px; font-size: 11px;
-      cursor: pointer; font-family: inherit; font-weight: 700;
-      transition: all 0.15s;
-    }
-    .filter-btn.active { background: #fff; color: #000; }
+    .keywords-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+    .kw-tag { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 20px; padding: 3px 10px; font-size: 11px; color: #888; }
 
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+    .filter-btn { background: #1a1a1a; color: #555; border: none; border-radius: 4px; padding: 3px 10px; font-size: 11px; cursor: pointer; font-family: inherit; font-weight: 700; transition: all 0.15s; }
+    .filter-btn.active { background: #fff; color: #000; }
     .sort-row { margin-left: auto; display: flex; gap: 8px; align-items: center; }
 
-    .result-item {
-      background: #111; border: 1px solid #161616;
-      border-radius: 10px; padding: 13px 18px;
-      display: flex; align-items: center; gap: 14px;
-      flex-wrap: wrap; cursor: pointer; margin-bottom: 7px;
-      transition: background 0.1s;
-      border-left: 3px solid #F5A623;
-    }
+    .result-item { background: #111; border: 1px solid #161616; border-left: 3px solid #F5A623; border-radius: 10px; padding: 13px 18px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; cursor: pointer; margin-bottom: 7px; transition: background 0.1s; }
     .result-item:hover { background: #141414; }
-
-    .rank {
-      width: 26px; height: 26px; background: #1a1a1a; border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; color: #444; font-weight: 700; flex-shrink: 0;
-    }
+    .rank { width: 26px; height: 26px; background: #1a1a1a; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #444; font-weight: 700; flex-shrink: 0; }
     .result-info { flex: 1; min-width: 140px; }
     .result-name { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
     .result-addr { font-size: 11px; color: #555; }
     .result-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-
     .score-label { font-size: 9px; color: #444; margin-bottom: 5px; letter-spacing: 0.08em; }
     .score-bar-wrap { display: flex; align-items: center; gap: 8px; }
     .score-track { height: 6px; width: 80px; background: #1a1a1a; border-radius: 3px; overflow: hidden; }
     .score-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
 
-    .status-badge {
-      border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700;
-      cursor: pointer; font-family: inherit; letter-spacing: 0.05em;
-      text-transform: uppercase; transition: all 0.15s; border: 1px solid;
-      white-space: nowrap;
-    }
+    .status-badge { border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: inherit; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.15s; border: 1px solid; white-space: nowrap; }
 
-    .error-box {
-      background: #1a0a0a; border: 1px solid #E74C3C44;
-      border-radius: 10px; padding: 16px; margin-bottom: 18px;
-      font-size: 12px; color: #E74C3C; line-height: 1.7;
-    }
+    .progress-bar { background: #1a1a1a; border-radius: 8px; height: 4px; margin-top: 10px; overflow: hidden; display: none; }
+    .progress-fill { height: 100%; background: #F5A623; border-radius: 8px; transition: width 0.3s ease; }
+
+    .loading-box { text-align: center; padding: 40px; color: #555; font-size: 13px; display: none; }
+    .error-box { background: #1a0a0a; border: 1px solid #E74C3C44; border-radius: 10px; padding: 16px; margin-bottom: 18px; font-size: 12px; color: #E74C3C; line-height: 1.7; display: none; }
     .empty-state { text-align: center; padding: 60px 20px; color: #2a2a2a; }
     .empty-icon { font-size: 48px; margin-bottom: 12px; }
     .empty-title { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; }
     .empty-sub { font-size: 12px; margin-top: 8px; }
 
+    .stats-bar { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+    .stat-pill { background: #111; border: 1px solid #1a1a1a; border-radius: 20px; padding: 4px 14px; font-size: 11px; color: #666; }
+    .stat-pill span { color: #F5A623; font-weight: 700; }
+
     /* Modal */
-    .modal-overlay {
-      position: fixed; inset: 0; background: #000000cc; z-index: 100;
-      display: flex; align-items: center; justify-content: center; padding: 24px;
-    }
-    .modal {
-      background: #111; border: 1px solid #2a2a2a; border-radius: 12px;
-      padding: 32px; max-width: 520px; width: 100%; color: #fff;
-      max-height: 90vh; overflow-y: auto;
-    }
+    .modal-overlay { position: fixed; inset: 0; background: #000000cc; z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: #111; border: 1px solid #2a2a2a; border-radius: 12px; padding: 32px; max-width: 520px; width: 100%; color: #fff; max-height: 90vh; overflow-y: auto; }
     .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
     .modal-title { font-size: 18px; font-family: 'Space Mono', monospace; }
     .modal-addr { margin: 4px 0 0; color: #666; font-size: 13px; }
-    .modal-close { background: none; border: none; color: #666; font-size: 20px; cursor: pointer; }
+    .modal-close { background: none; border: none; color: #666; font-size: 20px; cursor: pointer; line-height: 1; }
     .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
     .modal-stat { background: #1a1a1a; border-radius: 8px; padding: 12px; }
     .modal-stat-label { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-    .modal-stat-val { font-size: 13px; font-weight: 600; }
-    .modal-link {
-      display: block; background: #1a1a1a; border-radius: 8px; padding: 10px 14px;
-      color: #4A90E2; text-decoration: none; font-size: 13px; margin-bottom: 10px;
-      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-    }
+    .modal-link { display: block; background: #1a1a1a; border-radius: 8px; padding: 10px 14px; color: #4A90E2; text-decoration: none; font-size: 13px; margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .status-picker { display: flex; flex-wrap: wrap; gap: 6px; }
-    .status-pick-btn {
-      border-radius: 4px; padding: 5px 12px; font-size: 11px; font-weight: 700;
-      cursor: pointer; font-family: inherit; letter-spacing: 0.05em;
-      text-transform: uppercase; transition: all 0.15s; border: 1px solid;
-    }
-    .modal-note {
-      width: 100%; background: #1a1a1a; border: 1px solid #2a2a2a;
-      border-radius: 8px; padding: 12px; color: #fff; font-size: 13px;
-      font-family: inherit; resize: vertical;
-    }
+    .status-pick-btn { border-radius: 4px; padding: 5px 12px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: inherit; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.15s; border: 1px solid; }
+    .modal-note { width: 100%; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 12px; color: #fff; font-size: 13px; font-family: inherit; resize: vertical; }
     .modal-actions { display: flex; gap: 10px; }
-    .modal-save {
-      flex: 1; background: #F5A623; color: #000; border: none;
-      border-radius: 8px; padding: 14px; font-weight: 800; font-size: 13px;
-      cursor: pointer; font-family: 'Space Mono', monospace; letter-spacing: 0.05em;
-    }
-    .modal-maps {
-      flex: 0.5; background: #1a1a1a; color: #fff; border: 1px solid #2a2a2a;
-      border-radius: 8px; padding: 14px; font-weight: 700; font-size: 12px;
-      text-decoration: none; text-align: center; display: flex;
-      align-items: center; justify-content: center;
-    }
+    .modal-save { flex: 1; background: #F5A623; color: #000; border: none; border-radius: 8px; padding: 14px; font-weight: 800; font-size: 13px; cursor: pointer; font-family: 'Space Mono', monospace; letter-spacing: 0.05em; }
+    .modal-maps { flex: 0.5; background: #1a1a1a; color: #fff; border: 1px solid #2a2a2a; border-radius: 8px; padding: 14px; font-weight: 700; font-size: 12px; text-decoration: none; text-align: center; display: flex; align-items: center; justify-content: center; }
 
     /* CRM */
     .crm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
     .crm-stat { background: #111; border-radius: 10px; padding: 14px 16px; border: 1px solid #1a1a1a; }
     .crm-stat-label { font-size: 9px; color: #444; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; }
     .crm-stat-num { font-size: 30px; font-weight: 800; font-family: 'Syne', sans-serif; }
-    .crm-section-label { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; margin-top: 12px; }
-    .crm-item {
-      background: #111; border: 1px solid #161616; border-radius: 10px;
-      padding: 13px 18px; cursor: pointer; margin-bottom: 7px;
-      display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap;
-      transition: background 0.1s;
-    }
+    .crm-section-label { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; margin-top: 16px; }
+    .crm-item { background: #111; border: 1px solid #161616; border-radius: 10px; padding: 13px 18px; cursor: pointer; margin-bottom: 7px; display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap; transition: background 0.1s; }
     .crm-item:hover { background: #141414; }
     .crm-note { font-size: 12px; color: #777; margin-top: 8px; background: #0a0a0a; border-radius: 6px; padding: 6px 10px; line-height: 1.5; }
-
-    .hidden { display: none; }
-    #loading { text-align: center; padding: 40px; color: #555; font-size: 13px; }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -188,9 +111,9 @@
     <div class="tagline">PAMPAM — B2B COFFEE SHOP RADAR</div>
   </div>
   <div class="header-btns">
-    <button class="btn btn-active" id="tab-search-btn" onclick="switchTab('search')">🔍 Recherche</button>
-    <button class="btn btn-secondary" id="tab-crm-btn" onclick="switchTab('crm')">📋 CRM (<span id="crm-count">0</span>)</button>
-    <button class="btn btn-csv hidden" id="csv-btn" onclick="exportCSV()">↓ CSV</button>
+    <button class="btn btn-primary" id="tab-search-btn" onclick="switchTab('search')">🔍 Recherche</button>
+    <button class="btn btn-ghost" id="tab-crm-btn" onclick="switchTab('crm')">📋 CRM (<span id="crm-count">0</span>)</button>
+    <button class="btn btn-csv" id="csv-btn" onclick="exportCSV()">↓ CSV</button>
   </div>
 </div>
 
@@ -199,7 +122,6 @@
   <!-- SEARCH TAB -->
   <div id="tab-search">
     <div class="card">
-      <div class="card-label">✓ Proxy Vercel actif</div>
       <div class="search-row">
         <select id="city-select">
           <option>Paris 11e</option><option>Paris Marais</option><option>Paris Pigalle</option>
@@ -214,9 +136,23 @@
         <button class="btn btn-primary" onclick="search()">RECHERCHER</button>
         <button class="btn btn-demo" onclick="loadDemo()">DÉMO</button>
       </div>
+      <div class="keywords-row">
+        <span style="font-size:10px;color:#444;margin-right:4px;line-height:24px">Recherches :</span>
+        <span class="kw-tag">coffee shop</span>
+        <span class="kw-tag">café specialty</span>
+        <span class="kw-tag">brunch</span>
+        <span class="kw-tag">chai latte</span>
+        <span class="kw-tag">flat white</span>
+        <span class="kw-tag">matcha</span>
+        <span class="kw-tag">breakfast</span>
+        <span class="kw-tag">V60</span>
+      </div>
+      <div class="progress-bar" id="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
       <div id="filter-row" class="filter-row hidden">
-        <button class="filter-btn active" onclick="setFilter('all')" id="filter-all">Tous</button>
-        <div id="status-filters"></div>
+        <button class="filter-btn active" id="filter-all" onclick="setFilter('all')">Tous</button>
+        <div id="status-filters" style="display:flex;gap:6px;flex-wrap:wrap"></div>
         <div class="sort-row">
           <span style="font-size:10px;color:#444">Score min</span>
           <input type="range" min="0" max="100" value="0" id="score-range" oninput="setMinScore(this.value)" style="width:70px;accent-color:#F5A623" />
@@ -224,13 +160,20 @@
           <select onchange="setSortBy(this.value)" style="padding:4px 8px;font-size:11px">
             <option value="score">↓ Score</option>
             <option value="reviews">↓ Avis</option>
+            <option value="name">↓ Nom</option>
           </select>
         </div>
       </div>
     </div>
 
-    <div id="error-box" class="error-box hidden"></div>
-    <div id="loading" class="hidden">Recherche en cours…</div>
+    <div id="error-box" class="error-box"></div>
+    <div id="loading-box" class="loading-box">
+      <div style="font-size:24px;margin-bottom:12px">☕</div>
+      <div id="loading-text">Recherche en cours…</div>
+      <div style="font-size:11px;color:#444;margin-top:6px" id="loading-sub"></div>
+    </div>
+
+    <div id="stats-bar" class="stats-bar hidden"></div>
     <div id="results-list"></div>
     <div id="empty-state" class="empty-state">
       <div class="empty-icon">☕</div>
@@ -249,11 +192,10 @@
       <div class="empty-sub">Qualifie tes prospects depuis l'onglet Recherche</div>
     </div>
   </div>
-
 </div>
 
 <!-- MODAL -->
-<div id="modal" class="modal-overlay hidden" onclick="closeModal()">
+<div id="modal" class="modal-overlay" onclick="closeModal()">
   <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-header">
       <div>
@@ -263,10 +205,10 @@
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-grid">
-      <div class="modal-stat"><div class="modal-stat-label">Score influence</div><div class="modal-stat-val" id="m-score"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Google</div><div class="modal-stat-val" id="m-rating"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Prix</div><div class="modal-stat-val" id="m-price"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Catégorie</div><div class="modal-stat-val" id="m-type"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Score influence</div><div id="m-score"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Google</div><div id="m-rating" style="font-size:13px;font-weight:600"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Prix</div><div id="m-price" style="font-size:13px;font-weight:600"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Catégorie</div><div id="m-type" style="font-size:13px;font-weight:600"></div></div>
     </div>
     <div id="m-phone-wrap"></div>
     <div id="m-website-wrap"></div>
@@ -277,7 +219,7 @@
     </div>
     <div style="margin-bottom:20px">
       <div class="card-label" style="margin-bottom:8px">Note (contact, remarques…)</div>
-      <textarea class="modal-note" id="m-note" rows="3" placeholder="Ex: Directrice = Marie, meilleur créneau = mardi matin…"></textarea>
+      <textarea class="modal-note" id="m-note" rows="3" placeholder="Ex: Responsable = Marie, meilleur créneau = mardi matin…"></textarea>
     </div>
     <div class="modal-actions">
       <button class="modal-save" onclick="saveModal()">SAUVEGARDER</button>
@@ -288,165 +230,166 @@
 
 <script>
 const STATUSES = [
-  { key: "new",       label: "À contacter", color: "#F5A623" },
-  { key: "contacted", label: "Contacté",    color: "#4A90E2" },
-  { key: "followup",  label: "Relancé",     color: "#9B59B6" },
-  { key: "client",    label: "Client ✓",    color: "#27AE60" },
-  { key: "pass",      label: "Pass",        color: "#95A5A6" },
+  { key:"new",       label:"À contacter", color:"#F5A623" },
+  { key:"contacted", label:"Contacté",    color:"#4A90E2" },
+  { key:"followup",  label:"Relancé",     color:"#9B59B6" },
+  { key:"client",    label:"Client ✓",    color:"#27AE60" },
+  { key:"pass",      label:"Pass",        color:"#95A5A6" },
 ];
 
-const SPECIALTY_KEYWORDS = [
-  "specialty","spécialité","filter","filtre","aeropress","v60","chemex",
-  "cold brew","flat white","cortado","barista","torréfaction","single origin","brew"
-];
+const SPECIALTY_KEYWORDS = ["specialty","spécialité","filter","filtre","aeropress","v60","chemex","cold brew","flat white","cortado","barista","torréfaction","single origin","brew","matcha","chai","brunch"];
 
-let results = [];
-let crm = {};
-let currentFilter = "all";
-let minScore = 0;
-let sortBy = "score";
-let currentShop = null;
-let currentStatus = "new";
-let currentTab = "search";
+let results = [], crm = {}, currentFilter = "all", minScore = 0, sortBy = "score";
+let currentShop = null, currentStatus = "new", currentTab = "search";
 
-// Load CRM from localStorage
 try { crm = JSON.parse(localStorage.getItem("chai_crm_v3") || "{}"); } catch {}
 
 function saveCrm() {
   try { localStorage.setItem("chai_crm_v3", JSON.stringify(crm)); } catch {}
-  updateCrmCount();
-}
-
-function updateCrmCount() {
   document.getElementById("crm-count").textContent = Object.values(crm).filter(d => d.status).length;
 }
-updateCrmCount();
+saveCrm();
 
-function computeScore(place) {
-  const ratingScore = ((place.rating || 0) / 5) * 100;
-  const reviewScore = Math.min((place.user_ratings_total || 0) / 500, 1) * 100;
-  const priceScore = place.price_level ? (place.price_level / 4) * 100 : 50;
-  const text = (place.name + " " + (place.types || []).join(" ")).toLowerCase();
+function computeScore(p) {
+  const ratingScore  = ((p.rating || 0) / 5) * 100;
+  const reviewScore  = Math.min((p.user_ratings_total || 0) / 500, 1) * 100;
+  const priceScore   = p.price_level ? (p.price_level / 4) * 100 : 50;
+  const text         = (p.name + " " + (p.types||[]).join(" ")).toLowerCase();
   const specialtyScore = SPECIALTY_KEYWORDS.some(k => text.includes(k)) ? 100 : 0;
-  return Math.round(ratingScore * 0.35 + reviewScore * 0.35 + priceScore * 0.15 + specialtyScore * 0.15);
+  return Math.round(ratingScore*0.35 + reviewScore*0.35 + priceScore*0.15 + specialtyScore*0.15);
 }
 
-function statusColor(key) { return (STATUSES.find(s => s.key === key) || STATUSES[0]).color; }
-function statusLabel(key) { return (STATUSES.find(s => s.key === key) || STATUSES[0]).label; }
+function statusColor(k) { return (STATUSES.find(s=>s.key===k)||STATUSES[0]).color; }
+function statusLabel(k) { return (STATUSES.find(s=>s.key===k)||STATUSES[0]).label; }
 
-function scoreBar(score) {
-  const color = score >= 70 ? "#27AE60" : score >= 45 ? "#F5A623" : "#E74C3C";
-  return `<div class="score-bar-wrap">
-    <div class="score-track"><div class="score-fill" style="width:${score}%;background:${color}"></div></div>
-    <span style="font-size:12px;color:${color};font-weight:700">${score}</span>
-  </div>`;
+function scoreBarHtml(score) {
+  const color = score>=70?"#27AE60":score>=45?"#F5A623":"#E74C3C";
+  return `<div class="score-bar-wrap"><div class="score-track"><div class="score-fill" style="width:${score}%;background:${color}"></div></div><span style="font-size:12px;color:${color};font-weight:700">${score}</span></div>`;
 }
 
+// ── SEARCH ──
 async function search() {
   const city = document.getElementById("custom-city").value.trim() || document.getElementById("city-select").value;
-  document.getElementById("loading").classList.remove("hidden");
-  document.getElementById("error-box").classList.add("hidden");
+  
+  document.getElementById("loading-box").style.display = "block";
+  document.getElementById("loading-text").textContent = "Recherche sur 8 mots-clés en parallèle…";
+  document.getElementById("loading-sub").textContent = "coffee shop · brunch · chai latte · flat white · matcha · breakfast · V60";
+  document.getElementById("progress-bar").style.display = "block";
+  document.getElementById("progress-fill").style.width = "20%";
+  document.getElementById("error-box").style.display = "none";
   document.getElementById("empty-state").classList.add("hidden");
+  document.getElementById("stats-bar").classList.add("hidden");
   document.getElementById("results-list").innerHTML = "";
+  document.getElementById("csv-btn").style.display = "none";
   results = [];
 
   try {
-    const query = `specialty coffee shop café ${city} France`;
-    const url = `/api/places?type=textsearch&query=${encodeURIComponent(query)}`;
-    const r = await fetch(url);
+    document.getElementById("progress-fill").style.width = "60%";
+    const r = await fetch(`/api/places?type=multisearch&city=${encodeURIComponent(city)}`);
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     const data = await r.json();
-    if (data.error) throw new Error(data.error + (data.details ? " — " + data.details : ""));
-    results = (data.results || []).map(p => ({ ...p, score: computeScore(p) }));
+    if (data.error) throw new Error(data.error + (data.details?" — "+data.details:""));
+
+    document.getElementById("progress-fill").style.width = "100%";
+    results = (data.results||[]).map(p => ({ ...p, score: computeScore(p) }));
     renderResults();
   } catch(e) {
-    showError(e.message);
+    document.getElementById("error-box").style.display = "block";
+    document.getElementById("error-box").innerHTML = `⚠ ${e.message}`;
   } finally {
-    document.getElementById("loading").classList.add("hidden");
+    document.getElementById("loading-box").style.display = "none";
+    document.getElementById("progress-bar").style.display = "none";
+    document.getElementById("progress-fill").style.width = "0%";
   }
-}
-
-function showError(msg) {
-  const box = document.getElementById("error-box");
-  box.innerHTML = `⚠ ${msg}`;
-  box.classList.remove("hidden");
 }
 
 function loadDemo() {
   const city = document.getElementById("custom-city").value.trim() || document.getElementById("city-select").value;
   results = [
-    { place_id:"demo_1", name:"Café Bonhomme",         vicinity:`12 rue Sainte-Catherine, ${city}`, rating:4.8, user_ratings_total:412, price_level:2, types:["cafe"] },
-    { place_id:"demo_2", name:"Specialty Roasters Co.", vicinity:`5 allée de Chartres, ${city}`,    rating:4.9, user_ratings_total:287, price_level:3, types:["cafe"] },
-    { place_id:"demo_3", name:"Le Filtre",              vicinity:`88 cours Victor Hugo, ${city}`,   rating:4.6, user_ratings_total:531, price_level:2, types:["cafe"] },
-    { place_id:"demo_4", name:"Barista Lab",            vicinity:`3 place Gambetta, ${city}`,       rating:4.4, user_ratings_total:189, price_level:2, types:["cafe"] },
-    { place_id:"demo_5", name:"Black Coffee",           vicinity:`27 rue Palais Gallien, ${city}`,  rating:4.7, user_ratings_total:344, price_level:2, types:["cafe"] },
-    { place_id:"demo_6", name:"V60 & Friends",          vicinity:`44 rue des Remparts, ${city}`,    rating:4.9, user_ratings_total:156, price_level:3, types:["cafe"] },
-    { place_id:"demo_7", name:"Cortado House",          vicinity:`9 rue Judaïque, ${city}`,         rating:4.5, user_ratings_total:267, price_level:2, types:["cafe"] },
-    { place_id:"demo_8", name:"Café du Commerce",       vicinity:`1 quai des Chartrons, ${city}`,   rating:4.1, user_ratings_total:892, price_level:1, types:["cafe","restaurant"] },
-  ].map(p => ({ ...p, score: computeScore(p) }));
+    {place_id:"d1",name:"Café Bonhomme",vicinity:`12 rue Sainte-Catherine, ${city}`,rating:4.8,user_ratings_total:412,price_level:2,types:["cafe"]},
+    {place_id:"d2",name:"Specialty Roasters Co.",vicinity:`5 allée de Chartres, ${city}`,rating:4.9,user_ratings_total:287,price_level:3,types:["cafe"]},
+    {place_id:"d3",name:"Le Filtre",vicinity:`88 cours Victor Hugo, ${city}`,rating:4.6,user_ratings_total:531,price_level:2,types:["cafe"]},
+    {place_id:"d4",name:"Barista Lab",vicinity:`3 place Gambetta, ${city}`,rating:4.4,user_ratings_total:189,price_level:2,types:["cafe"]},
+    {place_id:"d5",name:"Black Coffee",vicinity:`27 rue Palais Gallien, ${city}`,rating:4.7,user_ratings_total:344,price_level:2,types:["cafe"]},
+    {place_id:"d6",name:"V60 & Friends",vicinity:`44 rue des Remparts, ${city}`,rating:4.9,user_ratings_total:156,price_level:3,types:["cafe"]},
+    {place_id:"d7",name:"Cortado House",vicinity:`9 rue Judaïque, ${city}`,rating:4.5,user_ratings_total:267,price_level:2,types:["cafe"]},
+    {place_id:"d8",name:"Café du Commerce",vicinity:`1 quai des Chartrons, ${city}`,rating:4.1,user_ratings_total:892,price_level:1,types:["cafe","restaurant"]},
+    {place_id:"d9",name:"Brunch & Co",vicinity:`15 rue des Capucins, ${city}`,rating:4.3,user_ratings_total:623,price_level:2,types:["cafe","restaurant"]},
+    {place_id:"d10",name:"Matcha House",vicinity:`7 place de la Victoire, ${city}`,rating:4.6,user_ratings_total:198,price_level:2,types:["cafe"]},
+  ].map(p=>({...p,score:computeScore(p)}));
   renderResults();
 }
 
 function renderResults() {
-  document.getElementById("error-box").classList.add("hidden");
-  document.getElementById("csv-btn").classList.remove("hidden");
-
-  // Build filters
   const statusCounts = {};
-  STATUSES.forEach(s => { statusCounts[s.key] = 0; });
-  results.forEach(r => { const st = (crm[r.place_id]?.status || "new"); statusCounts[st] = (statusCounts[st]||0)+1; });
+  STATUSES.forEach(s => statusCounts[s.key]=0);
+  results.forEach(r => { const st=crm[r.place_id]?.status||"new"; statusCounts[st]=(statusCounts[st]||0)+1; });
 
+  // Status filters
   let filterHtml = "";
   STATUSES.forEach(s => {
-    if (statusCounts[s.key] > 0) {
-      filterHtml += `<button class="filter-btn ${currentFilter===s.key?'active':''}" 
-        onclick="setFilter('${s.key}')" id="filter-${s.key}"
-        style="${currentFilter===s.key?'background:'+s.color+';color:#fff':''}"
-        >${s.label} (${statusCounts[s.key]})</button>`;
+    if (statusCounts[s.key]>0) {
+      const active = currentFilter===s.key;
+      filterHtml += `<button class="filter-btn${active?" active":""}" onclick="setFilter('${s.key}')" style="${active?"background:"+s.color+";color:#fff":""}">${s.label} (${statusCounts[s.key]})</button>`;
     }
   });
   document.getElementById("status-filters").innerHTML = filterHtml;
   document.getElementById("filter-all").textContent = `Tous (${results.length})`;
+  document.getElementById("filter-all").className = `filter-btn${currentFilter==="all"?" active":""}`;
   document.getElementById("filter-row").classList.remove("hidden");
 
   // Filter & sort
   let filtered = results
-    .filter(r => currentFilter === "all" || (crm[r.place_id]?.status || "new") === currentFilter)
-    .filter(r => r.score >= minScore)
-    .sort((a,b) => sortBy === "score" ? b.score - a.score : b.user_ratings_total - a.user_ratings_total);
+    .filter(r => currentFilter==="all"||(crm[r.place_id]?.status||"new")===currentFilter)
+    .filter(r => r.score>=minScore)
+    .sort((a,b) => {
+      if(sortBy==="score") return b.score-a.score;
+      if(sortBy==="reviews") return b.user_ratings_total-a.user_ratings_total;
+      return a.name.localeCompare(b.name);
+    });
 
-  if (filtered.length === 0) {
-    document.getElementById("results-list").innerHTML = "";
+  // Stats bar
+  const specialtyCount = results.filter(r=>r.score>=70).length;
+  document.getElementById("stats-bar").innerHTML = `
+    <div class="stat-pill">Total trouvés : <span>${results.length}</span></div>
+    <div class="stat-pill">Score élevé (≥70) : <span>${specialtyCount}</span></div>
+    <div class="stat-pill">Affichés : <span>${filtered.length}</span></div>
+  `;
+  document.getElementById("stats-bar").classList.remove("hidden");
+  document.getElementById("csv-btn").style.display = "block";
+
+  if (filtered.length===0) {
+    document.getElementById("results-list").innerHTML="";
     document.getElementById("empty-state").classList.remove("hidden");
     return;
   }
   document.getElementById("empty-state").classList.add("hidden");
 
-  let html = "";
-  filtered.forEach((shop, i) => {
-    const status = crm[shop.place_id]?.status || "new";
-    const color = statusColor(status);
-    const label = statusLabel(status);
+  let html="";
+  filtered.forEach((shop,i) => {
+    const status = crm[shop.place_id]?.status||"new";
+    const color  = statusColor(status);
+    const label  = statusLabel(status);
     html += `
       <div class="result-item" style="border-left-color:${color}" onclick="openModal('${shop.place_id}')">
         <div class="rank">${i+1}</div>
         <div class="result-info">
           <div class="result-name">${shop.name}</div>
-          <div class="result-addr">${shop.vicinity || ""}</div>
+          <div class="result-addr">${shop.vicinity||""}</div>
         </div>
         <div class="result-meta">
           <div>
             <div class="score-label">INFLUENCE</div>
-            ${scoreBar(shop.score)}
+            ${scoreBarHtml(shop.score)}
           </div>
           <div>
             <div class="score-label">GOOGLE</div>
-            <div style="font-size:13px;font-weight:700">${shop.rating} ⭐ <span style="color:#444;font-size:11px">(${shop.user_ratings_total})</span></div>
+            <div style="font-size:13px;font-weight:700">${shop.rating||"—"} ⭐ <span style="color:#444;font-size:11px">(${shop.user_ratings_total||0})</span></div>
           </div>
-          <button class="status-badge" 
-            style="background:${color}22;color:${color};border-color:${color}55"
-            onclick="event.stopPropagation();cycleStatus('${shop.place_id}','${shop.name}')"
-          >${label}</button>
+          <button class="status-badge" style="background:${color}22;color:${color};border-color:${color}55"
+            onclick="event.stopPropagation();cycleStatus('${shop.place_id}','${shop.name.replace(/'/g,"\\'")}')">
+            ${label}
+          </button>
         </div>
       </div>`;
   });
@@ -454,171 +397,113 @@ function renderResults() {
 }
 
 function cycleStatus(placeId, name) {
-  const current = crm[placeId]?.status || "new";
-  const idx = STATUSES.findIndex(s => s.key === current);
-  const next = STATUSES[(idx+1) % STATUSES.length].key;
-  crm[placeId] = { ...crm[placeId], status: next, name };
-  saveCrm();
-  renderResults();
+  const current = crm[placeId]?.status||"new";
+  const idx = STATUSES.findIndex(s=>s.key===current);
+  const next = STATUSES[(idx+1)%STATUSES.length].key;
+  crm[placeId] = {...crm[placeId], status:next, name};
+  saveCrm(); renderResults();
 }
 
-function setFilter(f) { currentFilter = f; renderResults(); }
-function setMinScore(v) { minScore = +v; document.getElementById("score-val").textContent = v; renderResults(); }
-function setSortBy(v) { sortBy = v; renderResults(); }
+function setFilter(f) { currentFilter=f; renderResults(); }
+function setMinScore(v) { minScore=+v; document.getElementById("score-val").textContent=v; renderResults(); }
+function setSortBy(v) { sortBy=v; renderResults(); }
 
-// Modal
+// ── MODAL ──
 function openModal(placeId) {
-  currentShop = results.find(r => r.place_id === placeId) || { place_id: placeId };
-  currentStatus = crm[placeId]?.status || "new";
-  const note = crm[placeId]?.note || "";
+  currentShop = results.find(r=>r.place_id===placeId) || {place_id:placeId};
+  currentStatus = crm[placeId]?.status||"new";
 
-  document.getElementById("m-name").textContent = currentShop.name || placeId;
-  document.getElementById("m-addr").textContent = currentShop.vicinity || currentShop.formatted_address || "";
-  document.getElementById("m-score").innerHTML = scoreBar(currentShop.score || 0);
-  document.getElementById("m-rating").textContent = `${currentShop.rating || "—"} ⭐ (${currentShop.user_ratings_total || 0} avis)`;
-  document.getElementById("m-price").textContent = currentShop.price_level ? "€".repeat(currentShop.price_level) : "—";
-  document.getElementById("m-type").textContent = currentShop.types?.includes("cafe") ? "☕ Café" : "🍽 Restaurant";
-  document.getElementById("m-note").value = note;
+  document.getElementById("m-name").textContent = currentShop.name||placeId;
+  document.getElementById("m-addr").textContent = currentShop.vicinity||currentShop.formatted_address||"";
+  document.getElementById("m-score").innerHTML = scoreBarHtml(currentShop.score||0);
+  document.getElementById("m-rating").textContent = `${currentShop.rating||"—"} ⭐ (${currentShop.user_ratings_total||0} avis)`;
+  document.getElementById("m-price").textContent = currentShop.price_level?"€".repeat(currentShop.price_level):"—";
+  document.getElementById("m-type").textContent = currentShop.types?.includes("cafe")?"☕ Café":"🍽 Restaurant";
+  document.getElementById("m-note").value = crm[placeId]?.note||"";
   document.getElementById("m-maps").href = `https://www.google.com/maps/place/?q=place_id:${placeId}`;
-
-  // Phone/website
   document.getElementById("m-phone-wrap").innerHTML = "";
   document.getElementById("m-website-wrap").innerHTML = "";
-  if (currentShop.formatted_phone_number) {
-    document.getElementById("m-phone-wrap").innerHTML = `<a class="modal-link" href="tel:${currentShop.formatted_phone_number}">📞 ${currentShop.formatted_phone_number}</a>`;
-  }
-  if (currentShop.website) {
-    document.getElementById("m-website-wrap").innerHTML = `<a class="modal-link" href="${currentShop.website}" target="_blank">🌐 ${currentShop.website}</a>`;
-  }
+  document.getElementById("m-hours-wrap").innerHTML = "";
+  renderStatusPicker();
+  document.getElementById("modal").classList.add("open");
 
-  // Status picker
-  let pickerHtml = "";
-  STATUSES.forEach(s => {
-    const active = currentStatus === s.key;
-    pickerHtml += `<button class="status-pick-btn"
-      style="background:${active?s.color:'#1a1a1a'};color:${active?'#fff':'#666'};border-color:${active?s.color:'#2a2a2a'}"
-      onclick="selectStatus('${s.key}')">${s.label}</button>`;
-  });
-  document.getElementById("m-status-picker").innerHTML = pickerHtml;
-
-  document.getElementById("modal").classList.remove("hidden");
-
-  // Fetch details if real place
-  if (!placeId.startsWith("demo_")) {
+  if (!placeId.startsWith("d")) {
     fetch(`/api/places?type=details&place_id=${placeId}`)
-      .then(r => r.json())
-      .then(data => {
-        const d = data.result || {};
-        if (d.formatted_phone_number) {
-          document.getElementById("m-phone-wrap").innerHTML = `<a class="modal-link" href="tel:${d.formatted_phone_number}">📞 ${d.formatted_phone_number}</a>`;
+      .then(r=>r.json()).then(data=>{
+        const d=data.result||{};
+        if(d.formatted_phone_number) document.getElementById("m-phone-wrap").innerHTML=`<a class="modal-link" href="tel:${d.formatted_phone_number}">📞 ${d.formatted_phone_number}</a>`;
+        if(d.website) document.getElementById("m-website-wrap").innerHTML=`<a class="modal-link" href="${d.website}" target="_blank">🌐 ${d.website}</a>`;
+        if(d.url) document.getElementById("m-maps").href=d.url;
+        if(d.opening_hours?.weekday_text) {
+          const h=d.opening_hours.weekday_text.map(l=>`<div style="font-size:12px;color:#888;margin-bottom:3px">${l}</div>`).join("");
+          document.getElementById("m-hours-wrap").innerHTML=`<div style="background:#1a1a1a;border-radius:8px;padding:12px;margin-bottom:14px"><div class="card-label" style="margin-bottom:8px">Horaires</div>${h}</div>`;
         }
-        if (d.website) {
-          document.getElementById("m-website-wrap").innerHTML = `<a class="modal-link" href="${d.website}" target="_blank">🌐 ${d.website}</a>`;
-        }
-        if (d.url) document.getElementById("m-maps").href = d.url;
-        if (d.opening_hours?.weekday_text) {
-          const hours = d.opening_hours.weekday_text.map(l => `<div style="font-size:12px;color:#888;margin-bottom:3px">${l}</div>`).join("");
-          document.getElementById("m-hours-wrap").innerHTML = `<div style="background:#1a1a1a;border-radius:8px;padding:12px;margin-bottom:14px"><div class="card-label" style="margin-bottom:8px">Horaires</div>${hours}</div>`;
-        }
-      }).catch(() => {});
+      }).catch(()=>{});
   }
 }
 
-function selectStatus(key) {
-  currentStatus = key;
-  let pickerHtml = "";
-  STATUSES.forEach(s => {
-    const active = currentStatus === s.key;
-    pickerHtml += `<button class="status-pick-btn"
-      style="background:${active?s.color:'#1a1a1a'};color:${active?'#fff':'#666'};border-color:${active?s.color:'#2a2a2a'}"
-      onclick="selectStatus('${s.key}')">${s.label}</button>`;
-  });
-  document.getElementById("m-status-picker").innerHTML = pickerHtml;
+function renderStatusPicker() {
+  document.getElementById("m-status-picker").innerHTML = STATUSES.map(s => {
+    const active=currentStatus===s.key;
+    return `<button class="status-pick-btn" style="background:${active?s.color:"#1a1a1a"};color:${active?"#fff":"#666"};border-color:${active?s.color:"#2a2a2a"}" onclick="selectStatus('${s.key}')">${s.label}</button>`;
+  }).join("");
 }
+
+function selectStatus(key) { currentStatus=key; renderStatusPicker(); }
 
 function saveModal() {
-  if (!currentShop) return;
-  const note = document.getElementById("m-note").value;
-  crm[currentShop.place_id] = { ...crm[currentShop.place_id], status: currentStatus, note, name: currentShop.name };
-  saveCrm();
-  closeModal();
-  if (currentTab === "search") renderResults();
-  else renderCrm();
+  if(!currentShop) return;
+  crm[currentShop.place_id] = {...crm[currentShop.place_id], status:currentStatus, note:document.getElementById("m-note").value, name:currentShop.name};
+  saveCrm(); closeModal();
+  if(currentTab==="search") renderResults(); else renderCrm();
 }
 
-function closeModal() {
-  document.getElementById("modal").classList.add("hidden");
-  document.getElementById("m-hours-wrap").innerHTML = "";
-  currentShop = null;
-}
+function closeModal() { document.getElementById("modal").classList.remove("open"); currentShop=null; }
 
-// CRM
+// ── CRM ──
 function renderCrm() {
-  const entries = Object.entries(crm).filter(([,d]) => d.status);
-  
-  // Stats
-  let gridHtml = "";
-  STATUSES.forEach(s => {
-    const count = entries.filter(([,d]) => d.status === s.key).length;
-    gridHtml += `<div class="crm-stat" style="border-color:${s.color}22">
-      <div class="crm-stat-label">${s.label}</div>
-      <div class="crm-stat-num" style="color:${s.color}">${count}</div>
-    </div>`;
-  });
-  document.getElementById("crm-grid").innerHTML = gridHtml;
+  const entries = Object.entries(crm).filter(([,d])=>d.status);
+  document.getElementById("crm-grid").innerHTML = STATUSES.map(s => {
+    const count=entries.filter(([,d])=>d.status===s.key).length;
+    return `<div class="crm-stat" style="border-color:${s.color}22"><div class="crm-stat-label">${s.label}</div><div class="crm-stat-num" style="color:${s.color}">${count}</div></div>`;
+  }).join("");
 
-  if (entries.length === 0) {
-    document.getElementById("crm-list").innerHTML = "";
-    document.getElementById("crm-empty").classList.remove("hidden");
-    return;
-  }
+  if(!entries.length) { document.getElementById("crm-list").innerHTML=""; document.getElementById("crm-empty").classList.remove("hidden"); return; }
   document.getElementById("crm-empty").classList.add("hidden");
 
-  let html = "";
+  let html="";
   STATUSES.forEach(s => {
-    const shops = entries.filter(([,d]) => d.status === s.key).map(([id,d]) => {
-      const found = results.find(r => r.place_id === id);
-      return { place_id:id, ...found, ...d };
-    });
-    if (!shops.length) return;
-    html += `<div class="crm-section-label" style="color:${s.color}">— ${s.label} (${shops.length})</div>`;
-    shops.forEach(shop => {
-      html += `<div class="crm-item" style="border-left:3px solid ${s.color}" onclick="openModal('${shop.place_id}')">
+    const shops=entries.filter(([,d])=>d.status===s.key).map(([id,d])=>({place_id:id,...results.find(r=>r.place_id===id),...d}));
+    if(!shops.length) return;
+    html+=`<div class="crm-section-label" style="color:${s.color}">— ${s.label} (${shops.length})</div>`;
+    shops.forEach(shop=>{
+      html+=`<div class="crm-item" style="border-left:3px solid ${s.color}" onclick="openModal('${shop.place_id}')">
         <div style="flex:1">
-          <div style="font-weight:700;font-size:14px">${shop.name || shop.place_id}</div>
-          ${shop.vicinity ? `<div style="font-size:11px;color:#555;margin-top:3px">${shop.vicinity}</div>` : ""}
-          ${shop.note ? `<div class="crm-note">📝 ${shop.note}</div>` : ""}
+          <div style="font-weight:700;font-size:14px">${shop.name||shop.place_id}</div>
+          ${shop.vicinity?`<div style="font-size:11px;color:#555;margin-top:3px">${shop.vicinity}</div>`:""}
+          ${shop.note?`<div class="crm-note">📝 ${shop.note}</div>`:""}
         </div>
-        ${shop.score ? scoreBar(shop.score) : ""}
+        ${shop.score?scoreBarHtml(shop.score):""}
       </div>`;
     });
   });
-  document.getElementById("crm-list").innerHTML = html;
+  document.getElementById("crm-list").innerHTML=html;
 }
 
 function switchTab(tab) {
-  currentTab = tab;
-  document.getElementById("tab-search").classList.toggle("hidden", tab !== "search");
-  document.getElementById("tab-crm").classList.toggle("hidden", tab !== "crm");
-  document.getElementById("tab-search-btn").className = `btn ${tab==="search"?"btn-active":"btn-secondary"}`;
-  document.getElementById("tab-crm-btn").className = `btn ${tab==="crm"?"btn-active":"btn-secondary"}`;
-  if (tab === "crm") renderCrm();
+  currentTab=tab;
+  document.getElementById("tab-search").classList.toggle("hidden",tab!=="search");
+  document.getElementById("tab-crm").classList.toggle("hidden",tab!=="crm");
+  document.getElementById("tab-search-btn").className=`btn ${tab==="search"?"btn-primary":"btn-ghost"}`;
+  document.getElementById("tab-crm-btn").className=`btn ${tab==="crm"?"btn-primary":"btn-ghost"}`;
+  if(tab==="crm") renderCrm();
 }
 
 function exportCSV() {
-  const rows = [["Nom","Adresse","Note Google","Nb avis","Score","Statut","Notes"]];
-  results.forEach(r => {
-    rows.push([
-      r.name, r.vicinity||"", r.rating||"", r.user_ratings_total||"", r.score,
-      statusLabel(crm[r.place_id]?.status||"new"),
-      (crm[r.place_id]?.note||"").replace(/\n/g," ")
-    ]);
-  });
-  const csv = rows.map(r => r.map(c => `"${c}"`).join(";")).join("\n");
-  const blob = new Blob(["\uFEFF"+csv], {type:"text/csv;charset=utf-8"});
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = `pampam-prospection.csv`;
+  const rows=[["Nom","Adresse","Note Google","Nb avis","Score","Statut","Notes"]];
+  results.forEach(r=>rows.push([r.name,r.vicinity||"",r.rating||"",r.user_ratings_total||"",r.score,statusLabel(crm[r.place_id]?.status||"new"),(crm[r.place_id]?.note||"").replace(/\n/g," ")]));
+  const csv=rows.map(r=>r.map(c=>`"${c}"`).join(";")).join("\n");
+  const a=Object.assign(document.createElement("a"),{href:URL.createObjectURL(new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"})),download:"pampam-prospection.csv"});
   a.click();
 }
 </script>
